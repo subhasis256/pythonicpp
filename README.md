@@ -34,4 +34,9 @@ For STL containers that are not derived from the `iterable` class but support it
 * `foreach(V &v, Function fun, IterFunction ifun)`: This is equivalent to `for(auto it = v.begin(); it != v.end(); it = iterfun(it)) { fun(*it); }`
 * `foreach(V &v, Function fun, V::iterator beginit, V::iterator endit, IterFunction ifun)`: This is equivalent to `for(auto it = beginit; it != endit; it = iterfun(it)) { fun(*it); }`
 
+Also, there is a function `range()` which iterates over all integers in a given range. The variations are:
+* `range(N)`: iterates through `0, 1, ..., N-1`
+* `range(M,N)`: iterates through `M, M+1, ..., N-1`
+* `range(M,N,step)`: iterates through `M, M+step, M+2*step, ..., N-1`
+
 Some simple examples that illustrate the functionality of the library is in the tests/test.cpp file.
